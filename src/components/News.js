@@ -29,9 +29,8 @@ const News=(props)=>{
     const updatenews=async()=>{
         props.setProgress(0)
         let url=`https://newsapi.org/v2/top-headlines?country=${props.country}&category=${props.category}&apikey=c6cbf15934ad4c269f4dead1aa7056da&page=${page}&pageSize=${props.pagesize}`;
-        
-    setloading(true)
-        
+        console.log(loading); 
+        setloading(true)
         let data=await fetch(url);
         props.setProgress(50)
         let parsedData=await data.json();
@@ -46,6 +45,7 @@ const News=(props)=>{
     useEffect(()=>{
         updatenews();
         document.title=`NewsMonkey-${props.category}`;
+        // eslint-disable-next-line
     },[])
     // const handlePrevClick =async() => {
 

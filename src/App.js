@@ -6,7 +6,7 @@ import LoadingBar from 'react-top-loading-bar'
 const App=()=> {
   
   const [progress,setProgress]=useState(0);
-  
+  console.log(progress)
   
     
     return (
